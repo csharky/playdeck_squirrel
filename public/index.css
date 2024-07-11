@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik One", serif;
+
+    height: 100vh;
+    overflow: hidden !important;
+    width: 100vw;
+    position: fixed;
+    touch-action: pan-x pan-y; /*https://stackoverflow.com/a/62165035/22725296*/
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: #2B3449;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.modal-content {
+    background-color: transparent;
+    border-style: none;
+}
+
+.modal {
+    /*noinspection CssUnresolvedCustomProperty*/
+    max-height: calc(100% - var(--footer-height));
+    --bs-modal-margin: 24px;
+}
+
+.modal-dialog {
+    margin-bottom: 8px;
+}
+
+.close {
+    height: 58px;
+    line-height: 80px;
+    width: 58px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.clickable:enabled:active {
+    background-color: rgb(0, 7, 46, 0.3);
+    background-blend-mode: multiply;
+}
+
+.clickable:disabled {
+    opacity: 0.5;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: 'Rubik One';
+    src: url('./fonts/RubikOne-Regular.eot');
+    src: local('./fonts/Rubik One Regular'), local('./fonts/RubikOne-Regular'),
+    url('./fonts/RubikOne-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/RubikOne-Regular.woff2') format('woff2'),
+    url('./fonts/RubikOne-Regular.woff') format('woff'),
+    url('./fonts/RubikOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

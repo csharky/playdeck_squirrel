@@ -1,0 +1,15 @@
+SINGLE ENTRYPOINT
+
+1. START MENU
+
+SCREENS
+
+1. START MENU
+2. GAME
+3. SCORE DIALOG
+
+ACTIONS
+
+first play:            START MENU      -> GAME
+play:                  SCORE DIALOG    -> GAME
+share:                 <share>

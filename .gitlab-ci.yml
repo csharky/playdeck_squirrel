@@ -1,0 +1,53 @@
+include:
+  - project: tonplay/gitlabci-templates
+    ref: master
+    file: /defaults/web3-gaming.yml
+  - project: tonplay/gitlabci-templates
+    ref: master
+    file: /snippets/build.yml
+  - project: tonplay/gitlabci-templates
+    ref: master
+    file: /snippets/deploy.yml
+
+
+stages:
+  - build
+  - deploy
+
+
+Build Viral Papa Jones Squirrel Frontend Production:
+  extends: .build-docker-new
+  stage: build
+  variables:
+    IMAGE_NAME: squirrel-frontend
+    SERVICE_PATH: "**/*"
+
+Deploy Viral Papa Jones Squirrel Frontend Production:
+  extends: .deploy-image-k8s-manual-new
+  stage: deploy
+  variables:
+    GCLOUD_REGION: europe-north1
+    APP_NAME: squirrel-frontend
+    CONTAINER_NAME: squirrel-frontend
+    IMAGE_NAME: squirrel-frontend
+    SERVICE_PATH: "**/*"
+    NAMESPACE: squirrel
+
+
+Build Viral Papa Jones Squirrel Frontend Dev:
+  extends: .build-docker-dev-new
+  stage: build
+  variables:
+    IMAGE_NAME: squirrel-frontend-test
+    SERVICE_PATH: "**/*"
+
+Deploy Viral Papa Jones Squirrel Frontend Dev:
+  extends: .deploy-image-k8s-manual-dev-new
+  stage: deploy
+  variables:
+    GCLOUD_REGION: europe-north1
+    APP_NAME: squirrel-frontend-test
+    CONTAINER_NAME: squirrel-frontend-test
+    IMAGE_NAME: squirrel-frontend-test
+    SERVICE_PATH: "**/*"
+    NAMESPACE: squirrel

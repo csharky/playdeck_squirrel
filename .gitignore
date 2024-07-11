@@ -1,0 +1,10 @@
+.idea/
+node_modules/
+.DS_Store
+public/build
+public.backup
+/.svelte-kit
+!rollup.config.js
+!src/main.ts
+!*.js
+!*.js.map
