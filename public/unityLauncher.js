@@ -10,9 +10,9 @@ window.onload = () => {
     var buildUrl = "UnityBuild";
     var loaderUrl = buildUrl + "/Game.loader.js";
     var config = {
-        dataUrl: buildUrl + "/Game.data.br",
-        frameworkUrl: buildUrl + "/Game.framework.js.br",
-        codeUrl: buildUrl + "/Game.wasm.br",
+        dataUrl: buildUrl + "/905115b576861e8a442592fe4f4a42eb.data.br",
+        frameworkUrl: buildUrl + "/0344015a1b347e34a7839213400ed259.js.br",
+        codeUrl: buildUrl + "/fb33854977bb324d24090c4f9cf8738d.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "TONPlay",
         productName: "Papa John's Flying Squirrel",
